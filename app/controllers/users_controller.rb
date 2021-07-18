@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       @length_height = @body_markings.bodies[0].length_height
       @weight = @body_markings.bodies[0].weight
       @special_markings = @body_markings.bodies[0].special_markings
-
       end
     end
   end
