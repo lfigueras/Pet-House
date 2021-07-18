@@ -19,10 +19,27 @@
           <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("gender.png", class: "h-4 fill-current text-green-700 pr-4") %> <%=current_user.gender%></p>
           <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("birthday-cake.png", class: "h-4 fill-current text-green-700 pr-4") %> <%=current_user.birth_date%></p>
           
-          <!-- Use https://simpleicons.org/ to find the svg for your preferred product --> 
-          <div class="text-center">
-            <%= link_to "Add more details",  new_bodies_path, class: " p-3 rounded-md text-white bg-pink-700" %>
+          <% if @body.present? %>
+            <div class="text-center my-3 ">
+            <span class= "font-bold text-3xl">Body Markings</span>
+            </div>
+              
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("color-palette.png", class: "h-4 fill-current text-green-700 pr-4") %>Coat color - <%=@coat_color%></p>
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("fur-coat.png", class: "h-4 fill-current text-green-700 pr-4") %>Fur type - <%=@fur_type%></p>
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("view.png", class: "h-4 fill-current text-green-700 pr-4") %>Eye color - <%=@eye_color%></p>
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("length.png", class: "h-4 fill-current text-green-700 pr-4") %>Lenght or Height - <%=@length_height%></p>
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("select.png", class: "h-4 fill-current text-green-700 pr-4") %>Special Markings - <%=@special_markings%></p>
+            <p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"><%= image_tag("weighing-machine.png", class: "h-4 fill-current text-green-700 pr-4") %>Weight - <%=@weight%></p>
+
+            <% else %>
+          <div class="text-center my-3 ">
+          <span class= "text-base">No body markings info yet</span>
           </div>
+          <div class="text-center mt-5">
+          <%= link_to "Click here to add",  new_bodies_path, class: " p-3 font-semibold text-black w-full cursor-pointer flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium  bg-pink-500 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+          </div>
+          <%end%>
+       
       </div>
 
   </div>
