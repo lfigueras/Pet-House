@@ -1,26 +1,28 @@
 
 
-<!-- This example requires Tailwind CSS v2.0+ -->
-<nav x-data="{ mobileMenuOpen : false }" class="bg-pink-700">
+<nav x-data="{ mobileMenuOpen : false }" class="bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-         
-          <%= image_tag("petlogo.png", class: "h-8 md:h8 hidden lg:block h-16 rounded-full py-1 w-auto") %>
+        <a href="/" class="block">
+          <%= image_tag("petlogo.png", class: " hidden rounded-lg lg:block h-16  py-1 w-auto") %>
+          </a>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            <% if user_signed_in? %>
+            <a href="/user" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+            <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Set up an appointment</a>
+            <%end%>
+            <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
           </div>
         </div>
       </div>
       <div class="hidden sm:ml-6 sm:block">
         <div class="flex items-center">
           
-
+        <% if user_signed_in? %>
           <!-- Profile dropdown -->
           <div class="ml-3 relative" >
             <div>
@@ -42,13 +44,14 @@
             -->
             <div :class="{ 'origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none' : mobileMenuOpen , 'hidden' : !mobileMenuOpen}"  @click.away="mobileMenuOpen = false class="" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" >
               <!-- Active: "bg-gray-100", Not Active: "" -->
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Schedule an appointment</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-            </div>
+
+              <a href="/list" class="block font-semibold px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">List of Schedule</a>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "block font-semibold  px-4 py-2 text-sm text-gray-700"  %>
+              </div>
           </div>
         </div>
       </div>
+      <%end%>
       <div class="-mr-2 flex sm:hidden " >
         <!-- Mobile menu button -->
         <button @click="mobileMenuOpen = !mobileMenuOpen"  type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
