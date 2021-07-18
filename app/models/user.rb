@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :bodies
   has_many :medicals
+  has_many :appointments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

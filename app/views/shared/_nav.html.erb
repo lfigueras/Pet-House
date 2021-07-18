@@ -13,7 +13,9 @@
           <div class="flex space-x-4">
             <% if user_signed_in? %>
             <a href="/user" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
-            <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Set up an appointment</a>
+            <a href="/appointments" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My appointments</a>
+
+            <a href="/appointments/new" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Set up an appointment</a>
             <%end%>
             <a href="#" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
           </div>
