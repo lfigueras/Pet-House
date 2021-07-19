@@ -1,8 +1,11 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="flex flex-col max-w-5xl mx-auto mt-20">
+<div class="flex flex-col max-w-5xl mx-auto mt-10">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+    <%= render "shared/alert" %>
       <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        
+      
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
@@ -26,7 +29,9 @@
             </tr>
           </thead>
           <tbody>
+         
           <% @appointments.each do |a| %>
+         
             <!-- Odd row -->
             <tr class="bg-white">
              
@@ -52,11 +57,16 @@
               </td>
               
             </tr>
-
+       
             <%end%>
-
+          
           </tbody>
         </table>
+        <%if @appointments.count == 0%>
+          <div class="text-center text-sm text-gray-400 p-5">
+          No appointments history yet.
+          </div>
+          <%end%>
       </div>
     </div>
   </div>

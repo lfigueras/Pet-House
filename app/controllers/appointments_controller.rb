@@ -11,7 +11,8 @@ class AppointmentsController < ApplicationController
       @appointments = Appointment.new(appointment_params)
       @appointments.user_id = current_user.id
 		  if @appointments.save
-        redirect_to  user_root_path
+        redirect_to  appointments_path
+        flash[:notice] = "Appointment has been submitted!"
       end
     end
     def destroy
