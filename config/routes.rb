@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get "/list", to: "home#list"
   root to: "home#index"
   get '/user' => "users#index", :as => :user_root
+ 
 end
