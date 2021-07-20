@@ -1,74 +1,66 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
-<div class="flex flex-col max-w-5xl mx-auto mt-10">
-  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-    <%= render "shared/alert" %>
-      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-        
-      
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
-            <tr>
-              
-             
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Reason
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Date
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Time
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Additonal information
-              </th>
-              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Action
-            </th>
-            </tr>
-          </thead>
-          <tbody>
-         
-          <% @appointments.each do |a| %>
-         
-            <!-- Odd row -->
-            <tr class="bg-white">
-             
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%=a.reason%>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%=a.date%>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%=a.time%>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%=a.additional_information%>
-              </td>
-
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              <%= link_to image_tag("delete.png" , class: "h-4 fill-currentpr-4"), appointments_path(@appointment, a),
-              data: {:confirm => 'Are you sure?'}, :method => :delete %>
-              </td>
+<body class=" bg-gray-100">
+<!-- component -->
+<div class="overflow-x-auto">
+        <div class="min-w-screen flex items-center justify-center bg-gray-100 font-sans ">
+            <div class="w-full lg:w-5/6">
+                <div class="bg-white shadow-md rounded my-6">
+                    <table class="min-w-max w-full table-auto">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Reason</th>
+                                <th class="py-3 px-6 text-left">Date</th>
+                                <th class="py-3 px-6 text-center">Time</th>
+                                <th class="py-3 px-6 text-center">Details</th>
+                                <th class="py-3 px-6 text-center">Status</th>
+                                <th class="py-3 px-6 text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <% @appointments.each do |a| %>
+                        <tbody class="text-gray-600 text-sm font-light">
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">
+                                        <%=a.reason%></span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <div class="flex items-center">
+                                    <%=a.date%>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                    <div class="flex items-center justify-center">
+                                    <%=a.time%>
+                                 </div>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                <%=a.additional_information%>
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                  statuss
+                                </td>
+                                <td class="py-3 px-6 text-center">
+                                <div class="flex item-center justify-center">
+                                
+                                <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                    <%= link_to image_tag("delete.png" , class: "h-4 fill-currentpr-4"), appointments_path(@appointment, a),
+                                        data: {:confirm => 'Are you sure?'}, :method => :delete %>
+                                </div>
+                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <%end%>
+                    </table>
+                    <%if @appointments.count == 0%>
+                      <div class="text-center text-sm text-gray-400 p-5">
+                      No appointments history yet.
+                      </div>
+                      <%end%>
             
-             
-              </td>
-              
-            </tr>
-       
-            <%end%>
-          
-          </tbody>
-        </table>
-        <%if @appointments.count == 0%>
-          <div class="text-center text-sm text-gray-400 p-5">
-          No appointments history yet.
-          </div>
-          <%end%>
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-
+    </body>

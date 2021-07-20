@@ -1,5 +1,5 @@
 class MedicalsController < ApplicationController
-    
+  before_action :authenticate_user!
     def new
         @medical_record = Medical.new
     end

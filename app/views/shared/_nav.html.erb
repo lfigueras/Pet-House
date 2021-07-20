@@ -33,7 +33,7 @@ Contact us
 
 </div>
 </div>
-<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 font-semibold">
 <!-- Profile dropdown -->
 <div class="ml-3 relative" x-data="{open: false}">
 <div>
@@ -47,25 +47,28 @@ Contact us
 </div>
 
 <div @click.away="open = false" aria-labelledby="user-menu" aria-orientation="vertical" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" x-show="open" style="display: none;">
-<a class="sm:hidden md:hidden block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="/user" role="menuitem">
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/user" role="menuitem">
 Profile</a>
-<a class="sm:hidden md:hidden block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="/appointments" role="menuitem">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href= "/users/edit" role="menuitem">
+Edit Profile
+</a>
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/appointments" role="menuitem">
 My Appointments
 </a>
-<a class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href= "/appointments/new" role="menuitem">
-Setup an appointment
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href= "/appointments/new" role="menuitem">
+Schedule an appointment
 </a>
-<a class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="/list" role="menuitem">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/list" role="menuitem">
 List of Schedule
 </a>
-<a class="sm:hidden md:hidden block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="#" >
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#" >
 Services
 </a>
-<a class="sm:hidden md:hidden block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="#" role="menuitem">
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#" role="menuitem">
 Contact us
 </a>
 
-<a class="text-base block px-4 py-2 text-gray-700hover:bg-gray-100" rel="nofollow" data-method="delete" href="/users/sign_out"><em-span data-chunk="cnk_3a21402ac4f63ea6cc49" data-chunk-editable="true" data-chunk-type="single_line_text" data-chunk-cache-id="profile_menu_sign_out" data-chunk-content-key="profile_menu_sign_out">Sign out</em-span></a>
+<a class="text-sm block px-4 py-2 text-gray-700 hover:bg-gray-100" rel="nofollow" data-method="delete" href="/users/sign_out"><em-span data-chunk="cnk_3a21402ac4f63ea6cc49" data-chunk-editable="true" data-chunk-type="single_line_text" data-chunk-cache-id="profile_menu_sign_out" data-chunk-content-key="profile_menu_sign_out">Sign out</em-span></a>
 </div>
 </div>
 </div>

@@ -1,8 +1,22 @@
-<body class=" bg-gray-100">
+<body class="bg-gray-100">
+<% if resource.errors.any? %>
+<div class="text-white px-6 py-4 border-0 rounded relative max-w-sm mt-5 mx-auto mb-4 bg-red-500 modal"  >
+
+<span class="inline-block align-middle mr-8">
+<p><strong>You got <%= pluralize(resource.errors.count, 'error') %>.</strong></p>
+<% resource.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+  <% end %>
+</span>
+
+</div>
+<% end %>
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		<!-- Container -->
 		<div class="container mx-auto ">
-
+		
 			<div class="flex justify-center px-6 my-12">
 				<!-- Row -->
 				<div class="w-full xl:w-3/4 lg:w-11/12 flex shadow-md rounded-md">
@@ -14,6 +28,7 @@
 					<!-- Col -->
 					<div class="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<h3 class="pt-4 text-2xl text-center pb-5 font-bold">Create an Account!</h3>
+						<%= render "shared/alert" %>
 						<form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
 							<div class="mb-4 md:flex md:justify-between">
 								<div class="mb-4 md:mr-2 md:mb-0">
@@ -50,8 +65,8 @@
 								<label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
 									Pet Gender
 								</label>
-								<%= f.text_field :gender, autofocus: true, autocomplete: "gender", placeholder: "Female or Male", :class=>"w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" %>
-							</div>
+								<%= f.select(:gender, ['Male','Female'], {}, { :class=> "w-full shadow h-9 px-3 text-sm text-gray-500 placeholder-gray-600 border rounded focus:shadow-outline" }) %>
+								</div>
 							<div class="md:ml-2">
 								<label class="block mb-2 text-sm font-bold text-gray-700" for="lastName">
 									Pet Birth date
@@ -64,7 +79,7 @@
 							<label class="block mb-2 text-sm font-bold text-gray-700" for="email">
 							Owner's Email
 						</label>
-						<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "youremail@account.co", :class=>"w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" %>
+						<%= f.email_field :email,  autofocus: true, autocomplete: "email", placeholder: "youremail@account.co", :class=>" w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" %>
 
 						</div>
               
@@ -81,7 +96,7 @@
 										Password
 									</label>
                   <%= f.password_field :password, autocomplete: "new-password", type:"password", placeholder:"******************", :class=>"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border  rounded shadow appearance-none focus:outline-none focus:shadow-outline" %>		
-									<p class="text-xs italic ">Please choose a password.</p>
+									<p class="text-xs text-pink-600 italic ">Please choose a password. Mininmum of 6 characters.</p>
 								</div>
 								<div class="md:ml-2">
 									<label class="block mb-2 text-sm font-bold text-gray-700" for="c_password">
@@ -112,3 +127,11 @@
 		</div>
   <% end %>
 </body>
+
+<script>
+setTimeout(()=> {
+	model = document.querySelector(".modal")
+	model.remove()
+ }, 3000);
+console.log('deleted')
+</script>
