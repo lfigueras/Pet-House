@@ -20,3 +20,9 @@ Features you may want to know:
 
 * Can Download/Extract data.
 
+#To run in your local machine:
+
+* 1. git clone <pethouse github link>
+  2. bundle
+  3. rails s
+  
