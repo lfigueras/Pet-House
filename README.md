@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This webiste is just a simple pet clinic site.
 
-Things you may want to cover:
+Features you may want to know:
 
-* Ruby version
+* Client can sign up.
 
-* System dependencies
+* Schedule an appointment.
 
-* Configuration
+* Can update profile information.
 
-* Database creation
+* Check clinic schedule.
 
-* Database initialization
+* Declare health status of the pet.
 
-* How to run the test suite
+* Check history of visits.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
