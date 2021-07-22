@@ -1,4 +1,4 @@
-# README
+# PetHouse
 
 This webiste is just a simple pet clinic site.
 
