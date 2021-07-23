@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates  :pet_name, :owner, :contact, :address, :breed, :gender, :birth_date, presence: true
   has_many :bodies
   has_many :medicals
-  has_one :appointment
+  has_many :appointments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

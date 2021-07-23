@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
       @appointment = Appointment.find_by(params[:id])
       @appointment.destroy
       redirect_to appointments_path
+      flash[:notice] = "Appointment has been deleted!"
     end
     private
     def appointment_params

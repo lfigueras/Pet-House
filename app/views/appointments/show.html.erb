@@ -1,5 +1,6 @@
 <body class=" bg-gray-100">
 <!-- component -->
+<%= render "shared/alert" %>
 <div class="overflow-x-auto">
         <div class="min-w-screen flex items-center justify-center bg-gray-100 font-sans ">
             <div class="w-full lg:w-5/6">
@@ -16,6 +17,7 @@
                             </tr>
                         </thead>
                         <% @appointments.each do |a| %>
+                            <%if a.user_id == current_user.id %>
                         <tbody class="text-gray-600 text-sm font-light">
                             <tr class="border-b border-gray-200 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
@@ -50,8 +52,9 @@
                             </tr>
                         </tbody>
                         <%end%>
+                        <%end%>
                     </table>
-                    <%if @appointments.count == 0%>
+                    <%if current_user.appointments.count == 0 %>
                       <div class="text-center text-sm text-gray-400 p-5">
                       No appointments history yet.
                       </div>
