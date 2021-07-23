@@ -21,14 +21,13 @@
   My Appointments
 </a>
 
-<a class="tracking-wide px-5 inline-flex items-center py-6 hover:bg-gray-100 hover:text-gray-700 font-bold text-gray-500" href="#">
+<a class="tracking-wide px-5 inline-flex items-center py-6 hover:bg-gray-100 hover:text-gray-700 font-bold text-gray-500" href="/services">
   Services
 </a>
-<a class="tracking-wide px-5 inline-flex items-center py-6 hover:bg-gray-100 hover:text-gray-700 font-bold text-gray-500" href="#">
+<a class="tracking-wide px-5 inline-flex items-center py-6 hover:bg-gray-100 hover:text-gray-700 font-bold text-gray-500" href="/contact">
 <span>
-Contact us
+Contact
 </span>
-<%= image_tag("telephone.png", class: "h-4 m-2 bg-white") %>
 </a>
 
 </div>
@@ -61,11 +60,11 @@ Schedule an appointment
 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/list" role="menuitem">
 List of Schedule
 </a>
-<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#" >
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/services" >
 Services
 </a>
-<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#" role="menuitem">
-Contact us
+<a class="sm:hidden md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/contact" role="menuitem">
+Contact 
 </a>
 
 <a class="text-sm block px-4 py-2 text-gray-700 hover:bg-gray-100" rel="nofollow" data-method="delete" href="/users/sign_out"><em-span data-chunk="cnk_3a21402ac4f63ea6cc49" data-chunk-editable="true" data-chunk-type="single_line_text" data-chunk-cache-id="profile_menu_sign_out" data-chunk-content-key="profile_menu_sign_out">Sign out</em-span></a>
@@ -103,12 +102,12 @@ Menu open: "block", Menu closed: "hidden"
 </svg>
 </button>
 <div @click.away="showMenu = false" aria-labelledby="user-menu" aria-orientation="vertical" class="text-center font-semibold py-2 w-48 bg-white rounded-b-lg shadow-xl" role="menu" x-show="showMenu" x-transition:enter-end="opacity-100 transform scale-x-100 translate-x-0" x-transition:enter-start="opacity-0 transform scale-x-0 -translate-x-1/2" x-transition:enter="transition ease-in-out duration-300" x-transition:leave-end="opacity-0 transform scale-x-0 -translate-x-1/2" x-transition:leave-start="opacity-100 transform scale-x-100 translate-x-0" x-transition:leave="transition ease-in-out duration-300" style="display: none;">
-<a class="tracking-wide px-5 inline-flex items-center py-2 text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/explore">
+<a class="tracking-wide px-5 inline-flex items-center py-2 text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/services">
 Services
 </a>
 
-<a class="tracking-wide px-5 inline-flex items-center py-2 text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/users">
-Contact us
+<a class="tracking-wide px-5 inline-flex items-center py-2 text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/contact">
+Contact 
 </a>
 <a class="rounded-md text-center shadow-md mx-5 mb-2 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 active:bg-indigo-700 hover:bg-gray-100  transition duration-150 ease-in-out sm:hidden md:hidden block px-4 py-2 text-base text-gray-700 hover:bg-gray-100" href="/users/sign_in"><em-span data-chunk="cnk_4ccf68faa28530b4bb66" data-chunk-editable="true" data-chunk-type="single_line_text" data-chunk-cache-id="log_in_top_bar" data-chunk-content-key="log_in_top_bar">Log in</em-span></a>
 <a class="text-center mx-5 rounded-md sm:hidden md:hidden block px-4 py-2 text-base hover:bg-gray-100 bg-pink-800 hover:bg-pink-400 text-white hover:text-gray-200" href="/users/sign_up" role="menuitem">
@@ -124,11 +123,11 @@ Get started
 </div>
 <div class="hidden sm:ml-6 sm:flex justify-center flex-1">
 <!-- Current: "hover:text-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-<a class="tracking-wide px-5 inline-flex items-center py-6 font-bold text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="#">
+<a class="tracking-wide px-5 inline-flex items-center py-6 font-bold text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/services">
 Services
 </a>
-<a class="tracking-wide px-5 inline-flex items-center py-6 font-bold text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="#">
-Contact us
+<a class="tracking-wide px-5 inline-flex items-center py-6 font-bold text-gray-500 border-transparent hover:border-gray-300 hover:bg-gray-100 hover:text-gray-700" href="/contact">
+Contact
 </a>
 
 </div>
